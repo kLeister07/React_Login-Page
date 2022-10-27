@@ -1,24 +1,22 @@
-import React from "react";
+import React from 'react';
+import Login from './components/Login';
 
-let isLoggedIn = true;
-
-function renderConditionally() {
-  if (isLoggedIn === true) {
-    return <h1>Hello</h1>;
-  }
-}
+let isLoggedIn = false;
+let userIsRegistered = false;
 
 function App() {
-  return (
-    <div className="container">
-      <h1>Hello</h1>
-      <form className="form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+    return (
+        <div className='container'>
+            {isLoggedIn ? (
+                <h1>Hello</h1>
+            ) : (
+                <Login
+                    isLoggedIn={isLoggedIn}
+                    userIsRegistered={userIsRegistered}
+                />
+            )}
+        </div>
+    );
 }
 
 export default App;
